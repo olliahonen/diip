@@ -2,6 +2,7 @@ package diip
 
 object Main {
   val words = Registry.wordService
+
   def main(args: Array[String]): Unit = {
     println(words.enlighten(4))
   }
@@ -9,11 +10,14 @@ object Main {
 
 object Registry extends
   WordServiceComponent with
-  WordRepoComponent
+  WordRepoComponent {
+  val wordService = new WordService
+  val wordRepo = new WordRepo
+}
 
 trait WordServiceComponent {
   weComeInPeace: WordRepoComponent =>
-  val wordService = new WordService
+  val wordService: WordService
 
   class WordService {
     def enlighten(times: Int): String =
@@ -29,7 +33,7 @@ trait WordServiceComponent {
 }
 
 trait WordRepoComponent {
-  val wordRepo = new WordRepo
+  val wordRepo: WordRepo
 
   class WordRepo {
     def getWord = if (Math.random < 0.5) "yo" else "hej"
