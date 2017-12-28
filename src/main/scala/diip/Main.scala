@@ -20,7 +20,9 @@ trait WordServiceComponent {
       if (times < 1) {
         "classic"
       } else {
-        (1 to times).map(_ => wordRepo.getWord).reduce(_ + " " + _)
+        (1 to times)
+          .map(_ => wordRepo.getWord)
+          .reduce(_ + " " + _)
       }
   }
 
