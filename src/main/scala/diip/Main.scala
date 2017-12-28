@@ -15,6 +15,13 @@ object Registry extends
   val wordRepo = new WordRepo
 }
 
+object AltRegistry extends
+  WordServiceComponent with
+  WordRepoComponent {
+  val wordService = new WordService
+  val wordRepo = new WordRepoPrint
+}
+
 trait WordServiceComponent {
   weComeInPeace: WordRepoComponent =>
   val wordService: WordService
@@ -37,6 +44,13 @@ trait WordRepoComponent {
 
   class WordRepo {
     def getWord = if (Math.random < 0.5) "yo" else "hej"
+  }
+
+  class WordRepoPrint extends WordRepo {
+    override def getWord = {
+      println("buu")
+      "???"
+    }
   }
 
 }
