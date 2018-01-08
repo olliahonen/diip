@@ -1,9 +1,9 @@
 package diip
 
-object Main {
+object CakePattern {
   val words = Registry.wordService
 
-  def main(args: Array[String]): Unit = {
+  def run(): Unit = {
     println(words.enlighten(4))
   }
 }
