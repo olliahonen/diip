@@ -12,6 +12,11 @@ object Registry {
   val wordService = new WordService(this)
 }
 
+object AltRegistry {
+  val wordRepo = new WordRepoPrint
+  val wordService = new WordService(this)
+}
+
 class WordService(
   deps: {val wordRepo: WordRepo}
 ) {
@@ -27,4 +32,11 @@ class WordService(
 
 class WordRepo {
   def getWord = if (Math.random < 0.5) "yo" else "hej"
+}
+
+class WordRepoPrint extends WordRepo {
+  override def getWord = {
+    println("buu")
+    "???"
+  }
 }
