@@ -1,6 +1,6 @@
-package diip
+package diip.cakepattern
 
-object CakePattern {
+object Main {
   val words = Registry.wordService
 
   def run(): Unit = {
