@@ -2,10 +2,13 @@ package diip.cakepattern
 
 object Main {
   val words = Registry.wordService
+  val testWords = TestRegistry.wordService
 
-  def run(): Unit = {
+  def run(): Unit =
     println(words.enlighten(4))
-  }
+
+  def test(): Unit =
+    println(testWords.enlighten(4))
 }
 
 object Registry extends

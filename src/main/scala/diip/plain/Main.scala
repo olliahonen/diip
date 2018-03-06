@@ -2,9 +2,13 @@ package diip.plain
 
 object Main {
   val words = Registry.wordService
+  val testWords = TestRegistry.wordService
 
   def run(): Unit =
     println(words.enlighten(4))
+
+  def test(): Unit =
+    println(testWords.enlighten(4))
 }
 
 trait RegistryScheme {
