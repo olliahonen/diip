@@ -17,7 +17,7 @@ object Registry extends RegistryScheme {
   val wordService = new WordService(this)
 }
 
-object AltRegistry extends RegistryScheme {
+object TestRegistry extends RegistryScheme {
   val wordRepo = new WordRepoPrint
   val wordService = new WordService(this)
 }

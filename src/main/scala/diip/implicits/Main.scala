@@ -12,7 +12,7 @@ object Registry {
   implicit val wordService = new WordService
 }
 
-object AltRegistry {
+object TestRegistry {
   implicit val wordRepo = new WordRepoPrint
   implicit val wordService = new WordService
 }

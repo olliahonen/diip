@@ -15,7 +15,7 @@ object Registry extends
   val wordRepo = new WordRepo
 }
 
-object AltRegistry extends
+object TestRegistry extends
   WordServiceComponent with
   WordRepoComponent {
   val wordService = new WordService

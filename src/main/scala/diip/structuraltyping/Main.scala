@@ -12,7 +12,7 @@ object Registry {
   val wordService = new WordService(this)
 }
 
-object AltRegistry {
+object TestRegistry {
   val wordRepo = new WordRepoPrint
   val wordService = new WordService(this)
 }
