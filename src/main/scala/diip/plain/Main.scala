@@ -26,13 +26,9 @@ class WordService(
   deps: RegistryScheme
 ) {
   def enlighten(times: Int): String =
-    if (times < 1) {
-      "classic"
-    } else {
-      (1 to times)
-        .map(_ => deps.wordRepo.getWord)
-        .reduce(_ + " " + _)
-    }
+    (1 to times)
+      .map(_ => deps.wordRepo.getWord)
+      .reduce(_ + " " + _)
 }
 
 class WordRepo {

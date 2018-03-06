@@ -19,13 +19,9 @@ object TestRegistry {
 
 class WordService(implicit val wordRepo: WordRepo) {
   def enlighten(times: Int): String =
-    if (times < 1) {
-      "classic"
-    } else {
-      (1 to times)
-        .map(_ => wordRepo.getWord)
-        .reduce(_ + " " + _)
-    }
+    (1 to times)
+      .map(_ => wordRepo.getWord)
+      .reduce(_ + " " + _)
 }
 
 class WordRepo {
