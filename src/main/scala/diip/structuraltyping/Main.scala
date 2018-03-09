@@ -36,7 +36,7 @@ class WordRepo {
 
 class WordRepoPrint extends WordRepo {
   override def getWord = {
-    println("buu")
+    println("testing...")
     "???"
   }
 }

@@ -47,7 +47,7 @@ trait WordRepoComponent {
 
   class WordRepoPrint extends WordRepo {
     override def getWord = {
-      println("buu")
+      println("testing...")
       "???"
     }
   }
