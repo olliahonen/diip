@@ -21,7 +21,7 @@ object TestRegistry {
   implicit val wordService = new WordService
 }
 
-class WordService(implicit val wordRepo: WordRepo) {
+class WordService(implicit wordRepo: WordRepo) {
   def enlighten(times: Int): String =
     (1 to times)
       .map(_ => wordRepo.getWord)
