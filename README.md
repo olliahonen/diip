@@ -7,3 +7,7 @@ Each DI style has its own package under [`diip`](https://github.com/olliahonen/d
 * Running `diip.plain.Main.run` prints something like `hej yo hej hej`
 * Method `diip.plain.Main.test` emulates a test setup, with the dependency wired to another implementation
 * The other `diip.*` packages should work identically
+
+---
+
+[License](LICENSE.md)
