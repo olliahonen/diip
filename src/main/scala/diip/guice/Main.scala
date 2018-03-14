@@ -21,9 +21,7 @@ object TestRegistry extends AbstractModule with ScalaModule {
     bind[WordRepo].to[WordRepoPrint]
 }
 
-class WordService @Inject()(
-  wordRepo: WordRepo
-) {
+class WordService @Inject()(wordRepo: WordRepo) {
   def enlighten(times: Int): String =
     (1 to times)
       .map(_ => wordRepo.getWord)

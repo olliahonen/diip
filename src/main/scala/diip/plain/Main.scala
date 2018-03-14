@@ -26,9 +26,7 @@ object TestRegistry extends RegistryScheme {
   val wordService = new WordService(this)
 }
 
-class WordService(
-  deps: RegistryScheme
-) {
+class WordService(deps: RegistryScheme) {
   def enlighten(times: Int): String =
     (1 to times)
       .map(_ => deps.wordRepo.getWord)
