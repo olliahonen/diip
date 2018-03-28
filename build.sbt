@@ -5,5 +5,6 @@ lazy val root = (project in file("."))
     libraryDependencies ++= Seq(
       "net.codingwell" %% "scala-guice" % "4.1.1",
       "com.softwaremill.macwire" %% "macros" % "2.3.1" % "provided",
+      "org.scalaz" %% "scalaz-core" % "7.2.20",
     )
   )
