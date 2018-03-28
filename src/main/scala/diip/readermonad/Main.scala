@@ -3,13 +3,19 @@ package diip.readermonad
 import scalaz.Reader
 
 object Main {
-  val words = Registry.wordService
-
   def run(): Unit =
-    println(^>(words.enlighten(4)))
+    new Application(Registry).run()
+
+  def test(): Unit =
+    new Application(TestRegistry).run()
+}
+
+class Application(registry: RegistryScheme) {
+  def run(): Unit =
+    println(^>(registry.wordService.enlighten(4)))
 
   private def ^>[T](reader: Reader[RegistryScheme, T]) =
-    reader(Registry)
+    reader(registry)
 }
 
 trait RegistryScheme {
@@ -19,6 +25,11 @@ trait RegistryScheme {
 
 object Registry extends RegistryScheme {
   val wordRepo = new WordRepo
+  val wordService = new WordService
+}
+
+object TestRegistry extends RegistryScheme {
+  val wordRepo = new WordRepoPrint
   val wordService = new WordService
 }
 
@@ -34,4 +45,11 @@ class WordService {
 
 class WordRepo {
   def getWord = if (Math.random < 0.5) "yo" else "hej"
+}
+
+class WordRepoPrint extends WordRepo {
+  override def getWord = {
+    println("testing...")
+    "???"
+  }
 }
