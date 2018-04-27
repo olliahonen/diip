@@ -12,13 +12,13 @@ object Main {
 }
 
 object Registry {
-  implicit val wordRepo = new WordRepo
-  implicit val wordService = new WordService
+  implicit lazy val wordRepo = new WordRepo
+  implicit lazy val wordService = new WordService
 }
 
 object TestRegistry {
-  implicit val wordRepo = new WordRepoPrint
-  implicit val wordService = new WordService
+  implicit lazy val wordRepo = new WordRepoPrint
+  implicit lazy val wordService = new WordService
 }
 
 class WordService(implicit wordRepo: WordRepo) {
